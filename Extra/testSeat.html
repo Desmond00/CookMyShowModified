@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            input[type=button]{
+                background-color: tan;
+                background-image: url('button.png');
+            }
+        </style>
+        <script>
+            var ar = [0,0,0,0,0,0];
+            function clicked(val)
+            {
+                ar[val] = 1-ar[val];
+                if(ar[val] == 0)
+                {
+                    document.getElementById(val).style.backgroundColor = "tan";
+                }
+                else if(ar[val] == 1)
+                {
+                    document.getElementById(val).style.backgroundColor = "green";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <input type=button id=1 value=1 onclick="clicked(this.value)">
+        <input type=button id=2 value=2 onclick="clicked(this.value)">
+        <input type=button id=3 value=3 onclick="clicked(this.value)">
+        <input type=button id=4 value=4 onclick="clicked(this.value)">
+        <input type=button id=5 value=5 onclick="clicked(this.value)">
+    </body>
+</html>

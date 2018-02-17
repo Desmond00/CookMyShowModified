@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/13653872/when-button-is-pressed-wait-3-seconds-then-submit-javascript
+
+https://www.w3schools.com/jsref/jsref_localecompare.asp
+
+https://stackoverflow.com/questions/3449316/how-to-compare-xmlhttp-responsetext
+
+https://stackoverflow.com/questions/8888166/auto-submit-form-after-5-seconds

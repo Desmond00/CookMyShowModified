@@ -1,0 +1,13 @@
+create table cookuser (emailid varchar(20) primary key, password varchar(20), name varchar(20), phoneNo number(20));
+
+insert into cookuser values('cook@gmail.com','cook1234','cook',7777123456);
+
+insert into cookuser values('ranjan@gmail.com','ranjan','Ranjan',9679883908);
+
+insert into cookuser values('sayant@gmail.com','sayanta','Sayanta',9007629050);
+
+
+
+====================================================================================================================
+
+create table cookslides (id number(10) primary key, name varchar2(30), img varchar2(50));
