@@ -57,4 +57,12 @@
     <servlet-name>ads</servlet-name>
     <url-pattern>/addSlides</url-pattern>
   </servlet-mapping>
+  <servlet>
+  <servlet-name>trailer</servlet-name>
+    <jsp-file>/trailer.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>trailer</servlet-name>
+    <url-pattern>/trailer</url-pattern>
+  </servlet-mapping>
 </web-app>

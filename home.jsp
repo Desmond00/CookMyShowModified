@@ -32,3 +32,4 @@
 </center>
 </body>
 </html>
+<%@include file = "viewSlides.jsp"%>

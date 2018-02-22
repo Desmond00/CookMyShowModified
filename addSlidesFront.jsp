@@ -12,7 +12,7 @@
 try{
 	int t = ob.check1(request);
 	if(t == 0)
-		response.sendRedirect("addSlides ");
+		response.sendRedirect("addSlidesï¿½");
 }catch(Exception e){}
 %>
 
@@ -35,17 +35,17 @@ function checknm(nm)
 		}
 }      
 
-function checkimg(img)
+function checkfile(file)
 {
-	if(img == "")
+	if(file == "")
 		{
 		chk = 1;	
-		document.getElementById("img1").style.display = "block";
-		document.getElementById("img1").innerHTML="<font class=\"reply\">Select the image</font>";
+		document.getElementById("file1").style.display = "block";
+		document.getElementById("file1").innerHTML="<font class=\"reply\">Select the file</font>";
 		}
 	else
 		{
-		document.getElementById("img1").style.display = "none";
+		document.getElementById("file1").style.display = "none";
 		chk = 2;
 		}
 }
@@ -89,15 +89,15 @@ function fullCheck()
 			{
 			document.getElementById("show").style.display = "block";			
 			document.getElementById("show").innerHTML = "<font class=\"reply\">Everything is OK, ready to submit</font>"
-			var name,img;
+			var name,img,video;
 			name = document.addSlides.imgName.value;
-			alert("image name : "+name);
-        	img = document.addSlides.imgURL.value;
+			img = document.addSlides.imgURL.value;
 			img = fileShortName(img);
-			alert(img);
+			video = document.addSlides.videoURL.value;
+			video = fileShortName(video);
 			xmlHttp = GetXmlHttpObject();
 			//alert(xmlHttp);
-			var url = "addSlides.jsp?name="+name+"&img="+img;
+			var url = "addSlides.jsp?name="+name+"&img="+img+"&video="+video;
 			alert(url);
 			xmlHttp.open("GET",url,true);
 			xmlHttp.onreadystatechange = stateChanged2
@@ -128,6 +128,9 @@ function fullCheck()
 		}
 		else if(data != "")
 		{
+			document.addSlides.imgName.value = "";
+			document.addSlides.imgURL.value = "";
+			document.addSlides.videoURL.value = "";
 			document.getElementById("show").style.display = "block";
 			document.getElementById("show").innerHTML=data;
 		}
@@ -143,8 +146,9 @@ function fullCheck()
 	<form name="addSlides" method=post onsubmit="return fullCheck()">
         <input type=text name=imgName placeholder="Slide name" onblur="checknm(this.value)"><br>
         <div id="name1"></div>
-        <input type="file" name=imgURL placeholder="Slide image" onblur="checkimg(this.value)"><br><br>
-        <div id="img1"></div>
+		<input type="file" name=imgURL placeholder="Slide image" onblur="checkfile(this.value)"><br><br>
+		<input type="file" name=videoURL placeholder="Slide trailer" onblur="checkfile(this.value)"><br><br>
+        <div id="file1"></div>
         <div id="show"></div>
         <input type=submit id="upload" value="Upload">
 	</form>

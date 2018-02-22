@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class addSlides
 {
-    String name,img;
+    String name,img,video;
 	public String getName() {
 		return name;
 	}
@@ -24,6 +24,15 @@ public class addSlides
 		this.img = img;
 	}
     
+    public String getVideo(){
+        return video;
+    }
+
+    public void setVideo(String video)
+    {
+        this.video = video;
+    } 
+
     public int maxid()throws SQLException
     {
         int id=1;
@@ -48,10 +57,11 @@ public class addSlides
         Connect ob = new Connect();
         Connection con = ob.c();
         int id = this.maxid();
-        PreparedStatement ps = con.prepareStatement("insert into cookslides values(?,?,?)");
+        PreparedStatement ps = con.prepareStatement("insert into cookslides values(?,?,?,?)");
         ps.setInt(1,id);
         ps.setString(2,name);
         ps.setString(3,"img/slides/"+img);
+        ps.setString(4,"video/"+video);
         int t = ps.executeUpdate();
         return t;
     }
